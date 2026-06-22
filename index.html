@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Styling and JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="app-header">
+        <h1>Advanced JS & CSS Dashboard</h1>
+        <p>Demonstrating media queries, dynamic logic, and asynchronous API calls.</p>
+    </header>
+
+    <main class="dashboard-container">
+        <section class="widget card-quiz">
+            <h2>Interactive Knowledge Quiz</h2>
+            <hr>
+            <div id="quiz-container">
+                <div class="quiz-header">
+                    <span id="question-number">Question 1 of 3</span>
+                </div>
+                <h3 id="question-text">Loading question...</h3>
+                <div id="answer-buttons" class="btn-grid">
+                </div>
+                <div class="quiz-footer">
+                    <button id="next-btn" class="btn hide">Next Question</button>
+                </div>
+            </div>
+            <div id="result-container" class="hide">
+                <h3>Quiz Completed!</h3>
+                <p id="score-text"></p>
+                <button id="restart-btn" class="btn">Restart Quiz</button>
+            </div>
+        </section>
+        <section class="widget card-api">
+            <h2>Real-Time Public API Fetcher</h2>
+            <hr>
+            <p class="description">Click the button below to fetch a dynamic, random tech joke from an external public API using JavaScript <code>fetch()</code>.</p>
+            
+            <div class="api-display-box">
+                <p id="joke-setup" class="joke-part">Click "Fetch New Joke" to start...</p>
+                <p id="joke-delivery" class="joke-part delivery highlight"></p>
+            </div>
+
+            <button id="fetch-api-btn" class="btn btn-fetch">
+                <span id="spinner" class="spinner hide"></span>
+                Fetch New Joke
+            </button>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

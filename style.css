@@ -1,0 +1,221 @@
+:root {
+    --bg-main: #0f172a;
+    --bg-card: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent-blue: #38bdf8;
+    --accent-green: #4ade80;
+    --accent-red: #f87171;
+    --border-color: #334155;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    padding: 1.5rem;
+    line-height: 1.5;
+}
+
+.app-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.app-header h1 {
+    font-size: 2.2rem;
+    color: var(--accent-blue);
+    margin-bottom: 0.5rem;
+}
+
+.app-header p {
+    color: var(--text-muted);
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: var(--border-color);
+    margin: 1rem 0 1.5rem 0;
+}
+
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.widget {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+.widget h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.btn {
+    background-color: var(--border-color);
+    color: var(--text-main);
+    border: 1px solid transparent;
+    padding: 0.75rem 1.25rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn:hover:not(:disabled) {
+    background-color: #475569;
+}
+
+.quiz-header {
+    color: var(--accent-blue);
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+#question-text {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-choice {
+    background-color: #1e293b;
+    border: 1px solid var(--border-color);
+    text-align: left;
+    padding: 1rem;
+    border-radius: 8px;
+    color: var(--text-main);
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background 0.15s;
+}
+
+.btn-choice:hover {
+    background-color: #334155;
+    border-color: var(--text-muted);
+}
+
+.correct {
+    background-color: rgba(74, 222, 128, 0.2) !important;
+    border-color: var(--accent-green) !important;
+}
+
+.wrong {
+    background-color: rgba(248, 113, 113, 0.2) !important;
+    border-color: var(--accent-red) !important;
+}
+
+#next-btn, #restart-btn {
+    background-color: var(--accent-blue);
+    color: #000;
+    font-weight: bold;
+    width: 100%;
+}
+
+#next-btn:hover, #restart-btn:hover {
+    background-color: #7dd3fc;
+}
+
+.description {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.api-display-box {
+    background-color: #0f172a;
+    border-radius: 8px;
+    padding: 1.25rem;
+    min-height: 120px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.joke-part {
+    font-size: 1.05rem;
+}
+
+.delivery {
+    margin-top: 0.7rem;
+    font-weight: 600;
+    color: var(--accent-green);
+    transition: opacity 0.5s ease;
+}
+
+.btn-fetch {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    background-color: #0284c7;
+}
+
+.btn-fetch:hover {
+    background-color: #0369a1;
+}
+
+.hide { display: none !important; }
+
+.spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid transparent;
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@media (min-width: 640px) {
+    body {
+        padding: 2.5rem;
+    }
+    
+    .app-header h1 {
+        font-size: 2.8rem;
+    }
+    
+    .btn-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+    .btn-fetch {
+        width: auto; 
+    }
+}
+@media (min-width: 1024px) {
+    .dashboard-container {
+        grid-template-columns: 1.2fr 0.8fr; 
+        align-items: start;
+    }
+    
+    .widget {
+        padding: 2.25rem; 
+    }
+}
